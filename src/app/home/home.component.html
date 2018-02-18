@@ -1,0 +1,12 @@
+<div class="jumbotron text-center">
+    <h1 class="">Sample Chat App</h1>
+    <p class="lead">Welcome to the demo MEAN stack Socket.io Chat App</p>
+    <ng-template #buttons>
+        <a class="btn btn-info" [routerLink]="['/login']">Login</a>
+        <a class="btn btn-primary" [routerLink]="['/sign-up']">Sign-up</a> 
+    </ng-template>
+    <div *ngIf="userService.loggedIn(); else buttons" class="container">
+        <h4 class="welcome">Welcome, {{ userService.getLoggedInUser().username }}</h4>
+        <button class="btn btn-success" routerLink="/chat">Start Chatting</button>
+    </div>
+</div>
